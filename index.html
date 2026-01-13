@@ -14,60 +14,131 @@
 }
 
 body{
-  background: linear-gradient(120deg,#e0f2fe,#fef3c7);
+  background: linear-gradient(120deg,#e0f2fe,#fef3c7,#fee2e2);
   color:#1f2933;
 }
 
 /* Header */
 header{
-  background: linear-gradient(135deg,#3b82f6,#9333ea);
+  background: linear-gradient(135deg,#3b82f6,#9333ea,#ec4899);
   color:white;
   text-align:center;
   padding:60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 Z"/></svg>');
+  background-size: cover;
 }
 
 header img{
-  width:120px;
+  width:140px;
+  height:140px;
   border-radius:50%;
-  border:4px solid white;
-  margin-bottom:15px;
+  border:5px solid white;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  z-index:1;
+  object-fit: cover;
 }
 
 header h1{
   font-size:3rem;
+  margin-bottom:10px;
+  position: relative;
+  z-index:1;
+  text-shadow:2px 2px 4px rgba(0,0,0,0.3);
 }
 
 header p{
-  font-size:1.2rem;
-  margin:10px 0;
+  font-size:1.3rem;
+  margin:15px 0 25px;
+  position: relative;
+  z-index:1;
 }
 
 .btn{
-  background:white;
-  color:#3b82f6;
-  padding:10px 25px;
-  border-radius:25px;
+  background: linear-gradient(90deg,#ff6b6b,#ffd93d);
+  color:#1f2933;
+  padding:12px 30px;
+  border-radius:50px;
   text-decoration:none;
   font-weight:bold;
+  display:inline-block;
+  margin:10px;
+  box-shadow:0 5px 15px rgba(255,107,107,0.4);
+  transition:all 0.3s ease;
+  position: relative;
+  z-index:1;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(255,107,107,0.6);
 }
 
 /* Section */
 section{
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
-  padding:50px 20px;
+  padding:60px 20px;
 }
 
-h2{
+.section-title{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:40px;
   color:#1e3a8a;
+  position:relative;
+  font-size:2.2rem;
+}
+
+.section-title::after{
+  content:'';
+  position:absolute;
+  bottom:-10px;
+  left:50%;
+  transform:translateX(-50%);
+  width:80px;
+  height:4px;
+  background: linear-gradient(90deg,#3b82f6,#9333ea);
+  border-radius:2px;
 }
 
 /* About */
-.about p{
-  text-align:center;
-  font-size:1.05rem;
+.about{
+  background:white;
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.about-content{
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+
+.about-img{
+  width:250px;
+  height:250px;
+  border-radius:20px;
+  object-fit:cover;
+  box-shadow:0 10px 25px rgba(59,130,246,0.3);
+}
+
+.about-text{
+  flex:1;
+  font-size:1.1rem;
+  line-height:1.7;
 }
 
 /* Skills */
@@ -75,72 +146,243 @@ h2{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:15px;
+  gap:20px;
+  margin-top:30px;
 }
 
 .skill-box span{
-  background:#dbeafe;
-  padding:10px 20px;
-  border-radius:20px;
-  font-weight:500;
+  background: linear-gradient(135deg,#6366f1,#8b5cf6);
+  color:white;
+  padding:12px 25px;
+  border-radius:30px;
+  font-weight:600;
+  box-shadow:0 5px 15px rgba(99,102,241,0.3);
+  transition:all 0.3s ease;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.skill-box span:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 20px rgba(99,102,241,0.4);
+}
+
+.skill-box span::before{
+  content:'✓';
+  font-size:1.1em;
 }
 
 /* Projects */
 .projects{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  margin-top:30px;
 }
 
 .project{
   background:white;
-  border-radius:15px;
-  padding:20px;
-  box-shadow:0 10px 20px rgba(0,0,0,0.1);
-  text-align:center;
+  border-radius:20px;
+  padding:0;
+  overflow:hidden;
+  box-shadow:0 15px 30px rgba(0,0,0,0.1);
+  transition:all 0.4s ease;
+  position:relative;
 }
 
-.project img{
-  width:80px;
-  margin-bottom:15px;
+.project:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 40px rgba(0,0,0,0.15);
+}
+
+.project-img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-bottom:5px solid;
+}
+
+.project:nth-child(1) .project-img{
+  border-color:#3b82f6;
+}
+.project:nth-child(2) .project-img{
+  border-color:#10b981;
+}
+.project:nth-child(3) .project-img{
+  border-color:#f59e0b;
+}
+
+.project-content{
+  padding:25px;
 }
 
 .project h3{
-  color:#2563eb;
+  color:#1e3a8a;
   margin-bottom:10px;
+  font-size:1.4rem;
+}
+
+.project p{
+  color:#4b5563;
+  margin-bottom:15px;
+  line-height:1.6;
+}
+
+.project-tech{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:15px;
+}
+
+.tech-tag{
+  background:#e0f2fe;
+  color:#0369a1;
+  padding:4px 12px;
+  border-radius:15px;
+  font-size:0.85rem;
+  font-weight:500;
 }
 
 /* Education */
 .education{
-  background:#f0f9ff;
-  border-radius:15px;
+  background: linear-gradient(135deg,#f0f9ff,#fef7ff);
+  border-radius:20px;
+  padding:40px;
   text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.education::before{
+  content:'🎓';
+  font-size:100px;
+  position:absolute;
+  top:20px;
+  right:20px;
+  opacity:0.1;
+}
+
+.edu-details{
+  font-size:1.1rem;
+  line-height:1.8;
+  position:relative;
+  z-index:1;
+}
+
+.edu-details strong{
+  color:#3b82f6;
+  font-size:1.2rem;
 }
 
 /* Contact */
 .contact{
   text-align:center;
+  background:white;
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
 }
 
-.contact a{
+.contact-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  margin-top:30px;
+}
+
+.contact-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  padding:20px;
+  background:#f8fafc;
+  border-radius:15px;
+  min-width:150px;
+  transition:all 0.3s ease;
+}
+
+.contact-item:hover{
+  background:#e0f2fe;
+  transform:translateY(-5px);
+}
+
+.contact-icon{
+  font-size:2rem;
+}
+
+.contact-item:nth-child(1) .contact-icon{color:#3b82f6;}
+.contact-item:nth-child(2) .contact-icon{color:#10b981;}
+.contact-item:nth-child(3) .contact-icon{color:#8b5cf6;}
+
+.contact-item a{
   color:#2563eb;
   text-decoration:none;
   font-weight:600;
+  transition:color 0.3s;
+}
+
+.contact-item a:hover{
+  color:#1d4ed8;
+  text-decoration:underline;
 }
 
 /* Footer */
 footer{
-  background:#1f2933;
+  background: linear-gradient(135deg,#1f2933,#111827);
   color:white;
   text-align:center;
-  padding:20px;
-  margin-top:40px;
+  padding:30px 20px;
+  margin-top:60px;
+}
+
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1100px;
+  margin:auto;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.social-links{
+  display:flex;
+  gap:20px;
+}
+
+.social-icon{
+  color:white;
+  font-size:1.5rem;
+  transition:all 0.3s;
+}
+
+.social-icon:hover{
+  color:#60a5fa;
+  transform:translateY(-3px);
+}
+
+@media(max-width:768px){
+  header h1{font-size:2.5rem;}
+  .about-content{flex-direction:column;}
+  .about-img{width:200px;height:200px;}
+  .footer-content{flex-direction:column;}
+  .projects{grid-template-columns:1fr;}
+  .section-title{font-size:1.8rem;}
 }
 
 @media(max-width:600px){
-  header h1{font-size:2.2rem;}
+  header h1{font-size:2rem;}
+  .btn{display:block;margin:10px auto;max-width:200px;}
+  .contact-links{flex-direction:column;}
 }
 </style>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -149,19 +391,34 @@ footer{
   <img src="assets/profile.png" alt="Profile">
   <h1>Himalayan</h1>
   <p>Aspiring Full Stack Web Developer</p>
-  <a href="#contact" class="btn">Contact Me</a>
+  <div>
+    <a href="#contact" class="btn">Contact Me</a>
+    <a href="#projects" class="btn">View Projects</a>
+  </div>
 </header>
 
 <section class="about">
-  <h2>About Me</h2>
-  <p>
-    Computer Science Engineering student passionate about creating
-    responsive, user-friendly web applications using modern technologies.
-  </p>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-content">
+    <img src="assets/about.jpg" alt="Working on laptop" class="about-img">
+    <div class="about-text">
+      <p>
+        Hi! I'm Himalayan, a passionate Computer Science Engineering student 
+        with a deep love for creating innovative web solutions. I specialize 
+        in building responsive, user-friendly applications using modern 
+        technologies that solve real-world problems.
+      </p>
+      <p style="margin-top:15px;">
+        When I'm not coding, you can find me exploring new frameworks, 
+        contributing to open-source projects, or hiking in the mountains 
+        that inspire my name.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section>
-  <h2>Technical Skills</h2>
+  <h2 class="section-title">Technical Skills</h2>
   <div class="skill-box">
     <span>HTML5</span>
     <span>CSS3</span>
@@ -169,59 +426,117 @@ footer{
     <span>React.js</span>
     <span>Node.js</span>
     <span>MongoDB</span>
+    <span>Express.js</span>
+    <span>Git & GitHub</span>
+    <span>Responsive Design</span>
+    <span>REST APIs</span>
   </div>
 </section>
 
-<section>
-  <h2>Projects</h2>
+<section id="projects">
+  <h2 class="section-title">Featured Projects</h2>
   <div class="projects">
 
     <div class="project">
-      <img src="assets/portfolio.png">
-      <h3>Portfolio Website</h3>
-      <p>Personal responsive portfolio using HTML, CSS, and JavaScript.</p>
+      <img src="assets/portfolio-showcase.jpg" alt="Portfolio Showcase" class="project-img">
+      <div class="project-content">
+        <h3>Interactive Portfolio Website</h3>
+        <p>A fully responsive portfolio with dynamic animations, dark mode toggle, and project filtering system.</p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">GSAP</span>
+        </div>
+      </div>
     </div>
 
     <div class="project">
-      <img src="assets/todo.png">
-      <h3>To-Do List App</h3>
-      <p>Dynamic task manager using JavaScript DOM manipulation.</p>
+      <img src="assets/todo-app.jpg" alt="To-Do App Interface" class="project-img">
+      <div class="project-content">
+        <h3>Smart To-Do List App</h3>
+        <p>Dynamic task manager with drag & drop, priority levels, local storage, and progress tracking.</p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Material-UI</span>
+          <span class="tech-tag">Local Storage</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
+      </div>
     </div>
 
     <div class="project">
-      <img src="assets/ai.png">
-      <h3>AI Resume Builder</h3>
-      <p>Smart resume generator using React and Node.js.</p>
+      <img src="assets/ai-resume.jpg" alt="AI Resume Builder" class="project-img">
+      <div class="project-content">
+        <h3>AI Resume Builder</h3>
+        <p>Intelligent resume generator with AI-powered suggestions, multiple templates, and PDF export.</p>
+        <div class="project-tech">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">OpenAI API</span>
+          <span class="tech-tag">MongoDB</span>
+        </div>
+      </div>
     </div>
 
   </div>
 </section>
 
 <section class="education">
-  <h2>Education</h2>
-  <p>
-    <strong>B.E Computer Science and Engineering</strong><br>
-    Government College of Engineering, Dharmapuri<br>
-    Expected Graduation: 2026
-  </p>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-details">
+    <p>
+      <strong>B.E Computer Science and Engineering</strong><br>
+      Government College of Engineering, Dharmapuri<br>
+      CGPA: 7.3/10 | Expected Graduation: 2026
+    </p>
+    <p style="margin-top:20px;">
+      <strong>Relevant Coursework:</strong> Data Structures & Algorithms, Web Development, 
+      Database Management, Machine Learning, Software Engineering
+    </p>
+  </div>
 </section>
 
 <section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Email: himalayan.skh@email.com</p>
-  <p>Phone: +91-9361756077</p>
-  <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/himalayan-senthil-kumar-214833339" target="_blank">
-      View Profile
-    </a>
-  </p>
+  <h2 class="section-title">Get In Touch</h2>
+  <p>I'm always open to discussing new opportunities and creative projects!</p>
+  
+  <div class="contact-links">
+    <div class="contact-item">
+      <div class="contact-icon">📧</div>
+      <strong>Email</strong>
+      <a href="mailto:himalayan.skh@email.com">himalayan.skh@email.com</a>
+    </div>
+    
+    <div class="contact-item">
+      <div class="contact-icon">📱</div>
+      <strong>Phone</strong>
+      <span>+91-9361756077</span>
+    </div>
+    
+    <div class="contact-item">
+      <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+      <strong>LinkedIn</strong>
+      <a href="https://www.linkedin.com/in/himalayan-senthil-kumar-214833339" target="_blank">
+        Connect with me
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2026 Himalayan. All rights reserved.
+  <div class="footer-content">
+    <div>
+      © 2026 Himalayan. All rights reserved.
+    </div>
+    <div class="social-links">
+      <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-codepen"></i></a>
+    </div>
+  </div>
 </footer>
 
 </body>
 </html>
-
