@@ -1,197 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Himalayan | Full Stack Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Himalayan | Portfolio</title>
 
-  <!-- Embedded CSS -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    body {
-      background: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
-    }
+body{
+  background: linear-gradient(120deg,#e0f2fe,#fef3c7);
+  color:#1f2933;
+}
 
-    header {
-      background: #1f2933;
-      color: #fff;
-      text-align: center;
-      padding: 60px 20px;
-    }
+/* Header */
+header{
+  background: linear-gradient(135deg,#3b82f6,#9333ea);
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
 
-    header h1 {
-      font-size: 3rem;
-    }
+header img{
+  width:120px;
+  border-radius:50%;
+  border:4px solid white;
+  margin-bottom:15px;
+}
 
-    header p {
-      margin: 10px 0;
-      font-size: 1.2rem;
-    }
+header h1{
+  font-size:3rem;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #3b82f6;
-      color: #fff;
-      padding: 10px 25px;
-      text-decoration: none;
-      border-radius: 5px;
-    }
+header p{
+  font-size:1.2rem;
+  margin:10px 0;
+}
 
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+.btn{
+  background:white;
+  color:#3b82f6;
+  padding:10px 25px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    h2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+/* Section */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:50px 20px;
+}
 
-    .about p {
-      text-align: center;
-      max-width: 700px;
-      margin: auto;
-    }
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#1e3a8a;
+}
 
-    .skill-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
+/* About */
+.about p{
+  text-align:center;
+  font-size:1.05rem;
+}
 
-    .skill-box span {
-      background: #e5e7eb;
-      padding: 10px 20px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
+/* Skills */
+.skill-box{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+}
 
-    .projects .project {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+.skill-box span{
+  background:#dbeafe;
+  padding:10px 20px;
+  border-radius:20px;
+  font-weight:500;
+}
 
-    .education p {
-      text-align: center;
-      font-size: 1rem;
-    }
+/* Projects */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    .contact {
-      text-align: center;
-    }
+.project{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  text-align:center;
+}
 
-    .contact a {
-      color: #3b82f6;
-      text-decoration: none;
-    }
+.project img{
+  width:80px;
+  margin-bottom:15px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1f2933;
-      color: #fff;
-      margin-top: 40px;
-    }
+.project h3{
+  color:#2563eb;
+  margin-bottom:10px;
+}
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
+/* Education */
+.education{
+  background:#f0f9ff;
+  border-radius:15px;
+  text-align:center;
+}
+
+/* Contact */
+.contact{
+  text-align:center;
+}
+
+.contact a{
+  color:#2563eb;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* Footer */
+footer{
+  background:#1f2933;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+@media(max-width:600px){
+  header h1{font-size:2.2rem;}
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Himalayan</h1>
-    <p>Aspiring Full Stack Web Developer</p>
-    <a href="#contact" class="btn">Contact Me</a>
-  </header>
+<header>
+  <img src="assets/profile.png" alt="Profile">
+  <h1>Himalayan</h1>
+  <p>Aspiring Full Stack Web Developer</p>
+  <a href="#contact" class="btn">Contact Me</a>
+</header>
 
-  <!-- About -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      I am a Computer Science Engineering student passionate about building 
-      responsive and user-friendly web applications using modern technologies.
-    </p>
-  </section>
+<section class="about">
+  <h2>About Me</h2>
+  <p>
+    Computer Science Engineering student passionate about creating
+    responsive, user-friendly web applications using modern technologies.
+  </p>
+</section>
 
-  <!-- Skills -->
-  <section class="skills">
-    <h2>Technical Skills</h2>
-    <div class="skill-box">
-      <span>HTML5</span>
-      <span>CSS3</span>
-      <span>JavaScript</span>
-      <span>React.js</span>
-      <span>Node.js</span>
-      <span>MongoDB</span>
-    </div>
-  </section>
+<section>
+  <h2>Technical Skills</h2>
+  <div class="skill-box">
+    <span>HTML5</span>
+    <span>CSS3</span>
+    <span>JavaScript</span>
+    <span>React.js</span>
+    <span>Node.js</span>
+    <span>MongoDB</span>
+  </div>
+</section>
 
-  <!-- Projects -->
-  <section class="projects">
-    <h2>Projects</h2>
+<section>
+  <h2>Projects</h2>
+  <div class="projects">
 
     <div class="project">
+      <img src="assets/portfolio.png">
       <h3>Portfolio Website</h3>
-      <p>Responsive personal portfolio built using HTML, CSS, and JavaScript.</p>
+      <p>Personal responsive portfolio using HTML, CSS, and JavaScript.</p>
     </div>
 
     <div class="project">
+      <img src="assets/todo.png">
       <h3>To-Do List App</h3>
       <p>Dynamic task manager using JavaScript DOM manipulation.</p>
     </div>
 
     <div class="project">
-      <h3>AI Resume Builder (In Progress)</h3>
+      <img src="assets/ai.png">
+      <h3>AI Resume Builder</h3>
       <p>Smart resume generator using React and Node.js.</p>
     </div>
-  </section>
 
-  <!-- Education -->
-  <section class="education">
-    <h2>Education</h2>
-    <p>
-      <strong>B.E Computer Science and Engineering</strong><br>
-      Government College of Engineering, Dharmapuri<br>
-      Expected Graduation: 2026
-    </p>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: himalayan.skh@email.com</p>
-    <p>Phone: +91-9361756077</p>
-    <p>
-      LinkedIn:
-      <a href="https://www.linkedin.com/in/himalayan-senthil-kumar-214833339" target="_blank">
-        View Profile
-      </a>
-    </p>
-  </section>
+<section class="education">
+  <h2>Education</h2>
+  <p>
+    <strong>B.E Computer Science and Engineering</strong><br>
+    Government College of Engineering, Dharmapuri<br>
+    Expected Graduation: 2026
+  </p>
+</section>
 
-  <footer>
-    <p>© 2026 Himalayan. All rights reserved.</p>
-  </footer>
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Email: himalayan.skh@email.com</p>
+  <p>Phone: +91-9361756077</p>
+  <p>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/himalayan-senthil-kumar-214833339" target="_blank">
+      View Profile
+    </a>
+  </p>
+</section>
+
+<footer>
+  © 2026 Himalayan. All rights reserved.
+</footer>
 
 </body>
 </html>
+
